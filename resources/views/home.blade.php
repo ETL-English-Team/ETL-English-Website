@@ -331,20 +331,20 @@
                                 <figure class="snip1104 red">
                                     <img src="../public/assets/images/HocTuVungTheoChuDe.jpg" style="width:100%; height:300px; margin-bottom:20px">
                                     <figcaption>
-                                      <h2><span>Play now</span></h2>
+                                        <h2><span>Play now</span></h2>
                                     </figcaption>
                                     <a href="#"></a>
-                                  </figure>
+                                </figure>
                             </div>
 
                             <div class="col-sm-4">
                                 <figure class="snip1104 blue">
                                     <img src="../public/assets/images/MagicSoundBox.jpg" style="width:100%; height:300px; margin-bottom:20px">
                                     <figcaption>
-                                      <h2><span>Play now</span></h2>
+                                        <h2><span>Play now</span></h2>
                                     </figcaption>
                                     <a href="#"></a>
-                                  </figure>
+                                </figure>
                             </div>
 
                             <div class="col-sm-4">
@@ -354,7 +354,7 @@
                                       <h2><span>Play now</span></h2>
                                     </figcaption>
                                     <a href="#"></a>
-                                  </figure>
+                                </figure>
                             </div>
                         </div>
 
