@@ -1,0 +1,189 @@
+/*1. Bang chu de*/
+CREATE TABLE Topic(
+	topic_id smallint AUTO_INCREMENT,
+    topic_name_en varchar(30),
+    topic_name_vi varchar(30),
+    image varchar(100),
+    CONSTRAINT pk_Topic PRIMARY KEY (topic_id)
+);
+
+/*2. Bang danh sach cap do*/
+CREATE TABLE Level_List(
+	level smallint,
+    level_name varchar(50),
+    topic_id smallint,
+    max_point tinyint,
+    CONSTRAINT pk_Level_List PRIMARY KEY (level)
+);
+ALTER TABLE Level_List ADD CONSTRAINT fk_Level_List_vs_Topic FOREIGN KEY (topic_id) REFERENCES Topic(topic_id);
+
+/*3. Bang Users*/
+CREATE TABLE Users(
+	user_id mediumint AUTO_INCREMENT,
+    admin boolean,
+    username varchar(30),
+    password varchar(100),
+    token varchar(100),
+    email varchar(100),
+    avatar varchar(100),
+    current_level smallint,
+    created_at datetime,
+    updated_at datetime,    
+    CONSTRAINT pk_Users PRIMARY KEY (user_id)
+);
+ALTER TABLE Level_List ADD CONSTRAINT fk_Users_vs_Level_List FOREIGN KEY (current_level) REFERENCES Level_List(level);
+
+/*4. Bang Trang thai nguoi dung*/
+CREATE TABLE User_Status(
+	user_id mediumint AUTO_INCREMENT,
+    online boolean,
+    created_at datetime,
+    updated_at datetime,    
+    CONSTRAINT pk_Users_Status PRIMARY KEY (user_id, created_at)
+);
+ALTER TABLE User_Status ADD CONSTRAINT fk_User_Status_vs_Users FOREIGN KEY (user_id) REFERENCES Users(user_id);
+
+/*5. Bang tang cap*/
+CREATE TABLE Level_Up_History(
+    user_id mediumint,
+    level smallint,
+    level_up_at datetime,
+    total_point tinyint,
+    star tinyint,
+    created_at datetime,
+    updated_at datetime,
+    CONSTRAINT pk_Level_Up_History PRIMARY KEY (user_id, level)
+);
+
+/*6. Bang lich su diem tro Magic_Image_Box*/
+CREATE TABLE Magic_Image_Box_History(
+	user_id mediumint,
+    point smallint,
+    complete_at datetime
+);
+
+/*7. Bang lich su diem tro Magic_Sound_Box*/
+CREATE TABLE Magic_Sound_Box_History(
+	user_id mediumint,
+    point smallint,
+    complete_at datetime
+);
+
+/*8. Bang xep hang tuan tro Magic_Image_Box*/
+CREATE TABLE Weekly_Rank_Image_Box(
+	begin_date date,
+    finish_date date,
+    user_id smallint,
+    point smallint,
+    rank tinyint,
+    created_at datetime,
+    updated_at datetime
+);
+
+/*9. Xep hang tuan tro Magic_Sound_Box*/
+CREATE TABLE Weekly_Rank_Sound_Box(
+	begin_date date,
+    finish_date date,
+    user_id smallint,
+    point smallint,
+    rank tinyint,
+    created_at datetime,
+    updated_at datetime
+);
+
+/*10. Xep hang thang tro Magic_Image_Box*/
+CREATE TABLE Monthly_Rank_Image_Box(
+	begin_date date,
+    finish_date date,
+    user_id smallint,
+    point smallint,
+    rank tinyint,
+    created_at datetime,
+    updated_at datetime
+);
+
+/*11. Xep hang thang tro Magic_Sound_Box*/
+CREATE TABLE Monthly_Rank_Sound_Box(
+	begin_date date,
+    finish_date date,
+    user_id smallint,
+    point smallint,
+    rank tinyint,
+    created_at datetime,
+    updated_at datetime
+);
+
+/*12. Bang danh sach tu loai*/
+CREATE TABLE Word_Type_List(
+	word_type_id tinyint,
+    word_type_name varchar(30)
+);
+
+/*13. Bang tu vung tieng Anh*/
+CREATE TABLE Word_En(
+	word_id smallint,
+    word varchar(30),
+    topic_id smallint,
+    spelling varchar(50),
+    voice varchar(100),
+    image varchar(100)
+);
+
+/*14. Bang Tu loai cua tu*/
+CREATE TABLE Word_Type(
+	word_id smallint,
+    word_type_id tinyint
+);
+
+/*15. Bang Nghia cua tu*/
+CREATE TABLE Meaning(
+	meaning_id mediumint,
+    word_id smallint,
+    meaning varchar(50)
+);
+
+/*16. Bang cau vi du cua tu*/
+CREATE TABLE Example_Sentence(
+	sentence_id mediumint,
+    word_id smallint,
+    sentence varchar(255)
+);
+
+/*17. Bang loai bai kiem tra*/
+CREATE TABLE Examination_Category(
+	examinaiton_category_id tinyint,
+    examination_category_name varchar(100),
+    description varchar(255)
+);
+
+/*18. Bang bai kiem tra*/
+CREATE TABLE Examination(
+	examination_id int,
+    user_id mediumint,
+    level smallint,    
+    begin_at datetime,
+    finish_at datetime,
+    pass boolean,
+    note varchar(50)
+);
+
+/*19. Bang phan cua bai kiem tra*/
+CREATE TABLE Examination_Part(
+	part_id int,
+    exmination_id int,
+    examination_category_id tinyint,
+    point tinyint,
+    created_at datetime,
+    updated_at datetime
+);
+
+/*20. Bang cau hoi cua bai kiem tra*/
+CREATE TABLE Examination_Question(
+    question_id bigint,
+	part_id int,
+    question_number tinyint,
+    word_id smallint,
+    result boolean,
+    created_at datetime,
+    updated_at datetime
+);

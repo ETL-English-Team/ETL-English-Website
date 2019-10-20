@@ -1,0 +1,25 @@
+DANH SACH CAC LAN BACKUP MA NGUON
+_________________________________________________________________________________
+Ten commit: Backup lan do an 3 lan 1
+Nguoi thuc hien: Nguyen Hoang Phuc
+Thoi gian thuc hien: 13:00 15/10/2019
+Noi dung da thuc hien:
+		------Tao cau truc thu muc laravel
+_________________________________________________________________________________
+Ten commit: Backup do an 3 lan 2
+Nguoi thuc hien: Nguyen Hoang Phuc
+Thoi gian thuc hien: 17:00 15/10/2019
+Noi dung da thuc hien:
+		------Code trang home
+		------Code trang level_list
+_________________________________________________________________________________
+Ten commit: Backup do an 3 lan 3
+Nguoi thuc hien: Nguyen Hoang Phuc
+Thoi gian thuc hien: 00:30 20/10/2019
+Noi dung da thuc hien:
+		------Tao thu muc document-files
+		------Tao file commits-content.txt
+		------Tao file csdl.txt
+_________________________________________________________________________________
+
+
