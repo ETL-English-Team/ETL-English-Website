@@ -21,5 +21,10 @@ Noi dung da thuc hien:
 		------Tao file commits-content.txt
 		------Tao file csdl.txt
 _________________________________________________________________________________
-
-
+Ten commit: Backup lan 4
+Nguoi thuc hien: Nguyen Hoang Phuc
+Thoi gian thuc hien: 12:50 21/10/2019
+Noi dung da thuc hien:
+		------Tao thu muc tu-vung trong document-files
+		------Them 4 file pdf trong thu muc tu vung
+_________________________________________________________________________________
