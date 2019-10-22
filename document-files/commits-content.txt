@@ -35,3 +35,11 @@ Noi dung da thuc hien:
 		------Update file csdl.txt (Xóa bảng Word_Type)
 		------Tạo file vocabulary.blade.php, vocabulary.css
 _________________________________________________________________________________
+Ten commit: Backup lan 6
+Nguoi thuc hien: Nguyen Hoang Phuc
+Thoi gian thuc hien: 00:13 23/10/2019
+Noi dung da thuc hien:
+		------Tao file play-audio.js
+		------Update file vocabulary.blade.php (code chuc nang click item --> xoay + phat am thanh)
+_________________________________________________________________________________
+

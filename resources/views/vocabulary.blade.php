@@ -302,7 +302,10 @@
                             </div> --}}
 
                             <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                <div class="panel panel-primary text-center vocabulary-box">
+                                <div class="flip-container" onclick="this.classList.toggle('focus');playAudio();">
+                                <div class="flipper">
+
+                                <div class="panel panel-primary text-center vocabulary-box front">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">1. Family</h4>
                                     </div>
@@ -317,25 +320,28 @@
                                             </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                <div class="panel panel-primary text-center vocabulary-box">
+
+                                <div class="panel panel-primary text-center vocabulary-box back">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">1. Family</h4>
                                     </div>
                                     <div class="panel-body">
-                                            <div class="panel-vocabulary-img-backview">
-                                                <img class="vocabulary-img-backview" src="assets/images/sound-vector-icon.jpg">
-                                            </div>
-                                            <div class="col-sm-6 col-lg-5 panel-vocabulary-detail-backview">
-                                                <br>Các nghĩa khác:
-                                                <br>(n) Gia đình
-                                                <br>(n) Gia đình
-                                                <br>Ví dụ: My family is the best in my heart
-                                            </div>
+                                        <div class="panel-vocabulary-img-backview">
+                                            <img class="vocabulary-img-backview" src="assets/images/sound-vector-icon.jpg">
+                                        </div>
+                                        <div class="col-sm-6 col-lg-5 panel-vocabulary-detail-backview">
+                                            <br>Các nghĩa khác:
+                                            <br>(n) Gia đình
+                                            <br>(n) Gia đình
+                                            <br>Ví dụ: My family is the best in my heart
+                                        </div>
                                     </div>
                                 </div>
+
+                                </div>
+                                </div>
                             </div>
+                            
 
                             <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
                                 <div class="panel panel-primary text-center vocabulary-box">
@@ -481,6 +487,8 @@
         <script src="assets/pages/dashborad.js"></script>
 
         <script src="assets/js/app.js"></script>
+
+        <script src="assets/js/play-audio.js"></script>
 
     </body>
 </html>
