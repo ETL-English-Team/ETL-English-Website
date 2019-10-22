@@ -2,13 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>ETL English - Học từ vựng online</title>
+        <title>Xadmino - Responsive Admin Dashboard Template</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="Admin Dashboard" name="description" />
         <meta content="ThemeDesign" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="assets/images/Logo/logo.png">
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <!-- DataTables -->
         <link href="assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
@@ -20,8 +20,7 @@
         <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
-        <link href="assets/css/home.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/topic.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/vocabulary.css" rel="stylesheet" type="text/css">
     </head>
 
 
@@ -35,8 +34,8 @@
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="text-center">
-                        <a href="index.html" class="logo"><img src="assets/images/Logo/logo-ETL-word-2.jpg" height="28"></a>
-                        <a href="index.html" class="logo-sm"><img src="assets/images/Logo/logo.png" height="68"></a>
+                        <a href="index.html" class="logo"><img src="assets/images/logo_white_2.png" height="28"></a>
+                        <a href="index.html" class="logo-sm"><img src="assets/images/logo_sm.png" height="36"></a>
                     </div>
                 </div>
                 <!-- Button mobile view to collapse sidebar menu -->
@@ -49,6 +48,12 @@
                                 </button>
                                 <span class="clearfix"></span>
                             </div>
+                            <form class="navbar-form pull-left" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control search-bar" placeholder="Search...">
+                                </div>
+                                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                            </form>
 
                             <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown hidden-xs">
@@ -134,7 +139,7 @@
                                     <li><a href="javascript:void(0)"> Settings</a></li>
                                     <li><a href="javascript:void(0)"> Lock screen</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="javascript:void(0)"> Đăng xuất</a></li>
+                                    <li><a href="javascript:void(0)"> Logout</a></li>
                                 </ul>
                             </div>
 
@@ -145,7 +150,7 @@
                     <div id="sidebar-menu">
                         <ul>
                             <li>
-                                <a href="index.html" class="waves-effect"><i class="ti-home"></i><span> Trang chủ </span></a>
+                                <a href="index.html" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span></a>
                             </li>
 
                             <li>
@@ -261,16 +266,16 @@
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
-                    <div class="container">
+                    <div class="container"><div class="list-items-box">
 
                         <!-- Page-Title -->
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="page-header-title">
-                                    <h4 class="pull-left page-title">Trang chủ</h4>
-                                    <ol class="breadcrumb pull-right">
-                                        <li><a href="#">ETL English</a></li>
-                                        <li class="active">Trang chủ</li>
+                                    <h4 class="pull-left page-title">Level 1 - Dụng cụ học tập</h4>
+                                    <ol class="hidden-xs breadcrumb pull-right">
+                                        <li><a href="#">Xadmino</a></li>
+                                        <li class="active">Dashboard</li>
                                     </ol>
                                     <div class="clearfix"></div>
                                 </div>
@@ -278,130 +283,171 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-sm-6 col-lg-3">
+
+                            {{-- <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" style="min-width: 230px">
                                 <div class="panel panel-primary text-center">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title">LV 1 - "Gia đình"</h4>
+                                        <h4 class="panel-title">1. Family</h4>
                                     </div>
-                                    <div class="panel-body" style="padding: 0px;">
-                                            <figure class="snip1104 blue">
-                                                <img src="../public/assets/images/MagicSoundBox.jpg" style="width:100%; height:200px;">
-                                                <figcaption>
-                                                    <h2><img src="../public/assets/images/danh-gia/1-sao-danh-gia.png" style="opacity:1"></h2>
-                                                </figcaption>
-                                                <a href="#"></a>
-                                            </figure>
+                                    <div class="panel-body">
+                                        <div class="panel-vocabulary-img">
+                                            <img class="vocabulary-img" src="assets/images/MagicSoundBox.jpg">
+                                        </div>
+                                        <div class="col-sm-6 col-lg-5 panel-vocabulary-detail">
+                                            (n) Gia đình
+                                            <br>[ˈfam(ə)lē]
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> --}}
+
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="panel panel-primary text-center vocabulary-box">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">1. Family</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                            <div class="panel-vocabulary-img">
+                                                <img class="vocabulary-img" src="assets/images/MagicSoundBox.jpg">
+                                            </div>
+                                            <div class="col-sm-6 col-lg-5 panel-vocabulary-detail">
+                                                _____________
+                                                <br>(n) Gia đình
+                                                <br>[ˈfam(ə)lē]
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="panel panel-primary text-center vocabulary-box">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">1. Family</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                            <div class="panel-vocabulary-img-backview">
+                                                <img class="vocabulary-img-backview" src="assets/images/sound-vector-icon.jpg">
+                                            </div>
+                                            <div class="col-sm-6 col-lg-5 panel-vocabulary-detail-backview">
+                                                <br>Các nghĩa khác:
+                                                <br>(n) Gia đình
+                                                <br>(n) Gia đình
+                                                <br>Ví dụ: My family is the best in my heart
+                                            </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-sm-6 col-lg-3">
-                                    <div class="panel panel-primary text-center">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">LV 1 - "Gia đình"</h4>
-                                        </div>
-                                        <div class="panel-body" style="padding: 0px;">
-                                                <figure class="snip1104 blue">
-                                                    <img src="../public/assets/images/MagicSoundBox.jpg" style="width:100%; height:200px;">
-                                                    <figcaption>
-                                                        <h2><img src="../public/assets/images/danh-gia/2-sao-danh-gia.png" style="opacity:1"></h2>
-                                                    </figcaption>
-                                                    <a href="#"></a>
-                                                </figure>
-                                        </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="panel panel-primary text-center vocabulary-box">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">1. Family</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                            <div class="panel-vocabulary-img">
+                                                <img class="vocabulary-img" src="assets/images/MagicSoundBox.jpg">
+                                            </div>
+                                            <div class="col-sm-6 col-lg-5 panel-vocabulary-detail">
+                                                (n) Gia đình
+                                                <br>[ˈfam(ə)lē]
+                                            </div>
                                     </div>
                                 </div>
-
-                            <div class="col-sm-6 col-lg-3">
-                                    <div class="panel panel-primary text-center">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">LV 1 - "Gia đình"</h4>
-                                        </div>
-                                        <div class="panel-body" style="padding: 0px;">
-                                                <figure class="snip1104 blue">
-                                                    <img src="../public/assets/images/MagicSoundBox.jpg" style="width:100%; height:200px;">
-                                                    <figcaption>
-                                                        <h2><img src="../public/assets/images/danh-gia/3-sao-danh-gia.png" style="opacity:1"></h2>
-                                                    </figcaption>
-                                                    <a href="#"></a>
-                                                </figure>
-                                        </div>
+                            </div>
+                            
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="panel panel-primary text-center vocabulary-box">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">1. Family</h4>
                                     </div>
+                                    <div class="panel-body">
+                                            <div class="panel-vocabulary-img">
+                                                <img class="vocabulary-img" src="assets/images/MagicSoundBox.jpg">
+                                            </div>
+                                            <div class="col-sm-6 col-lg-5 panel-vocabulary-detail">
+                                                (n) Gia đình
+                                                <br>[ˈfam(ə)lē]
+                                            </div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="col-sm-6 col-lg-3">
-                                    <div class="panel panel-primary text-center">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">LV 1 - "Gia đình"</h4>
-                                        </div>
-                                        <div class="panel-body" style="padding: 0px;">
-                                                <figure class="snip1104 blue">
-                                                    <img src="../public/assets/images/MagicSoundBox.jpg" style="width:100%; height:200px;">
-                                                    <figcaption>
-                                                        <h2><img src="../public/assets/images/Logo/logo-ETL-word-2.jpg" style="opacity:1"></h2>
-                                                    </figcaption>
-                                                    <a href="#"></a>
-                                                </figure>
-                                        </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="panel panel-primary text-center vocabulary-box">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">1. Family</h4>
                                     </div>
+                                    <div class="panel-body">
+                                            <div class="panel-vocabulary-img">
+                                                <img class="vocabulary-img" src="assets/images/MagicSoundBox.jpg">
+                                            </div>
+                                            <div class="col-sm-6 col-lg-5 panel-vocabulary-detail">
+                                                (n) Gia đình
+                                                <br>[ˈfam(ə)lē]
+                                            </div>
+                                    </div>
+                                </div>
                             </div>
+
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="panel panel-primary text-center  vocabulary-box">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">1. Family</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                            <div class="panel-vocabulary-img">
+                                                <img class="vocabulary-img" src="assets/images/MagicSoundBox.jpg">
+                                            </div>
+                                            <div class="col-sm-6 col-lg-5 panel-vocabulary-detail">
+                                                (n) Gia đình
+                                                <br>[ˈfam(ə)lē]
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="panel panel-primary text-center vocabulary-box">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">1. Family</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                            <div class="panel-vocabulary-img">
+                                                <img class="vocabulary-img" src="assets/images/MagicSoundBox.jpg">
+                                            </div>
+                                            <div class="col-sm-6 col-lg-5 panel-vocabulary-detail">
+                                                (n) Gia đình
+                                                <br>[ˈfam(ə)lē]
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                <div class="panel panel-primary text-center vocabulary-box">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">1. Family</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                            <div class="panel-vocabulary-img">
+                                                <img class="vocabulary-img" src="assets/images/MagicSoundBox.jpg">
+                                            </div>
+                                            <div class="col-sm-6 col-lg-5 panel-vocabulary-detail">
+                                                (n) Gia đình
+                                                <br>[ˈfam(ə)lē]
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+
                         </div>
+                    </div></div> <!-- container -->
 
-                        <div class="row">
-                                <div class="col-sm-6 col-lg-3">
-                                    <div class="panel panel-primary text-center">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">LV 1 - "Gia đình"</h4>
-                                        </div>
-                                        <div class="panel-body" style="padding: 0px;">
-                                                <figure class="snip1104 blue">
-                                                    <img src="../public/assets/images/MagicSoundBox.jpg" style="width:100%; height:200px;">
-                                                    <figcaption>
-                                                        <h2><img src="../public/assets/images/Logo/logo-ETL-word-2.jpg" style="opacity:1"></h2>
-                                                    </figcaption>
-                                                    <a href="#"></a>
-                                                </figure>
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="col-sm-6 col-lg-3">
-                                    <div class="panel panel-primary text-center">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">LV 2 - "Dụng cụ học tập"</h4>
-                                        </div>
-                                        <div class="panel-body">
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="col-sm-6 col-lg-3">
-                                    <div class="panel panel-primary text-center">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">LV 3 - "Cảm xúc"</h4>
-                                        </div>
-                                        <div class="panel-body">
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="col-sm-6 col-lg-3">
-                                    <div class="panel panel-primary text-center">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">LV 4 - "Thể thao"</h4>
-                                        </div>
-                                        <div class="panel-body">
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-
-                    </div> <!-- container -->
-                    
                 </div> <!-- content -->
 
                 <footer class="footer">
-                    2019 © ETL English Team.
+                    2016 © Xadmino.
                 </footer>
 
             </div>
@@ -435,10 +481,6 @@
         <script src="assets/pages/dashborad.js"></script>
 
         <script src="assets/js/app.js"></script>
-
-        {{-- Image Style --}}
-        <script src="assets/js/image_style.js"></script>
-
 
     </body>
 </html>

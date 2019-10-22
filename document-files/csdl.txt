@@ -31,7 +31,7 @@ CREATE TABLE Users(
     updated_at datetime,    
     CONSTRAINT pk_Users PRIMARY KEY (user_id)
 );
-ALTER TABLE Level_List ADD CONSTRAINT fk_Users_vs_Level_List FOREIGN KEY (current_level) REFERENCES Level_List(level);
+ALTER TABLE Users ADD CONSTRAINT fk_Users_vs_Level_List FOREIGN KEY (current_level) REFERENCES Level_List(level);
 
 /*4. Bang Trang thai nguoi dung*/
 CREATE TABLE User_Status(
@@ -54,136 +54,164 @@ CREATE TABLE Level_Up_History(
     updated_at datetime,
     CONSTRAINT pk_Level_Up_History PRIMARY KEY (user_id, level)
 );
+ALTER TABLE Level_Up_History ADD CONSTRAINT fk_Level_Up_History_vs_Level_List FOREIGN KEY (level) REFERENCES Level_List(level);
 
 /*6. Bang lich su diem tro Magic_Image_Box*/
 CREATE TABLE Magic_Image_Box_History(
 	user_id mediumint,
     point smallint,
-    complete_at datetime
+    complete_at datetime,
+    CONSTRAINT pk_Magic_Image_Box_History PRIMARY KEY (user_id, complete_at)
 );
+ALTER TABLE Magic_Image_Box_History ADD CONSTRAINT fk_Magic_Image_Box_History_vs_Users FOREIGN KEY (user_id) REFERENCES Users(user_id);
 
 /*7. Bang lich su diem tro Magic_Sound_Box*/
 CREATE TABLE Magic_Sound_Box_History(
 	user_id mediumint,
     point smallint,
-    complete_at datetime
+    complete_at datetime,
+    CONSTRAINT pk_Magic_Sound_Box_History PRIMARY KEY (user_id, complete_at)
 );
+ALTER TABLE Magic_Sound_Box_History ADD CONSTRAINT fk_Magic_Sound_Box_History_vs_Users FOREIGN KEY (user_id) REFERENCES Users(user_id);
 
 /*8. Bang xep hang tuan tro Magic_Image_Box*/
 CREATE TABLE Weekly_Rank_Image_Box(
 	begin_date date,
     finish_date date,
-    user_id smallint,
+    user_id mediumint,
     point smallint,
     rank tinyint,
     created_at datetime,
-    updated_at datetime
+    updated_at datetime,
+    CONSTRAINT pk_Weekly_Rank_Image_Box PRIMARY KEY (rank, begin_date, finish_date)
 );
+ALTER TABLE Weekly_Rank_Image_Box ADD CONSTRAINT fk_Weekly_Rank_Image_Box_vs_Users FOREIGN KEY (user_id) REFERENCES Users(user_id);
 
 /*9. Xep hang tuan tro Magic_Sound_Box*/
 CREATE TABLE Weekly_Rank_Sound_Box(
 	begin_date date,
     finish_date date,
-    user_id smallint,
+    user_id mediumint,
     point smallint,
     rank tinyint,
     created_at datetime,
-    updated_at datetime
+    updated_at datetime,
+	CONSTRAINT pk_Weekly_Rank_Sound_Box PRIMARY KEY (rank, begin_date, finish_date)
 );
+ALTER TABLE Weekly_Rank_Sound_Box ADD CONSTRAINT fk_Weekly_Rank_Sound_Box_vs_Users FOREIGN KEY (user_id) REFERENCES Users(user_id);
 
 /*10. Xep hang thang tro Magic_Image_Box*/
 CREATE TABLE Monthly_Rank_Image_Box(
 	begin_date date,
     finish_date date,
-    user_id smallint,
+    user_id mediumint,
     point smallint,
     rank tinyint,
     created_at datetime,
-    updated_at datetime
+    updated_at datetime,
+    CONSTRAINT pk_Monthly_Rank_Image_Box PRIMARY KEY (rank, begin_date, finish_date)
 );
+ALTER TABLE Monthly_Rank_Image_Box ADD CONSTRAINT fk_Monthly_Rank_Image_Box_vs_Users FOREIGN KEY (user_id) REFERENCES Users(user_id);
 
 /*11. Xep hang thang tro Magic_Sound_Box*/
 CREATE TABLE Monthly_Rank_Sound_Box(
 	begin_date date,
     finish_date date,
-    user_id smallint,
+    user_id mediumint,
     point smallint,
     rank tinyint,
     created_at datetime,
-    updated_at datetime
+    updated_at datetime,
+	CONSTRAINT pk_Monthly_Rank_Sound_Box PRIMARY KEY (rank, begin_date, finish_date)
 );
+ALTER TABLE Monthly_Rank_Sound_Box ADD CONSTRAINT fk_Monthly_Rank_Sound_Box_vs_Users FOREIGN KEY (user_id) REFERENCES Users(user_id);
 
 /*12. Bang danh sach tu loai*/
 CREATE TABLE Word_Type_List(
-	word_type_id tinyint,
-    word_type_name varchar(30)
+	word_type_id tinyint AUTO_INCREMENT,
+    word_type_name varchar(30),
+    word_type_short_name varchar(5),
+    CONSTRAINT pk_Word_Type_List PRIMARY KEY (word_type_id)
 );
+
 
 /*13. Bang tu vung tieng Anh*/
 CREATE TABLE Word_En(
-	word_id smallint,
+	word_id smallint AUTO_INCREMENT,
     word varchar(30),
     topic_id smallint,
     spelling varchar(50),
     voice varchar(100),
-    image varchar(100)
+    image varchar(100),
+    CONSTRAINT pk_Word_En PRIMARY KEY (word_id)
 );
+ALTER TABLE Word_En ADD CONSTRAINT fk_Word_En_vs_Topic FOREIGN KEY (topic_id) REFERENCES Topic(topic_id);
 
-/*14. Bang Tu loai cua tu*/
-CREATE TABLE Word_Type(
-	word_id smallint,
-    word_type_id tinyint
-);
-
-/*15. Bang Nghia cua tu*/
+/*14. Bang Nghia cua tu*/
 CREATE TABLE Meaning(
-	meaning_id mediumint,
+	meaning_id mediumint AUTO_INCREMENT,
     word_id smallint,
-    meaning varchar(50)
+    word_type_id tinyint,
+    meaning varchar(50),
+    CONSTRAINT pk_Meaning PRIMARY KEY (meaning_id)
 );
+ALTER TABLE Meaning ADD CONSTRAINT fk_Meaning_vs_Word_En FOREIGN KEY (word_id) REFERENCES Word_En(word_id);
+ALTER TABLE Meaning ADD CONSTRAINT fk_Meaning_vs_Word_Type_List FOREIGN KEY (word_type_id) REFERENCES Word_Type_List(word_type_id);
 
-/*16. Bang cau vi du cua tu*/
+/*15. Bang cau vi du cua tu*/
 CREATE TABLE Example_Sentence(
-	sentence_id mediumint,
+	sentence_id mediumint AUTO_INCREMENT,
     word_id smallint,
-    sentence varchar(255)
+    sentence varchar(255),
+    CONSTRAINT pk_Example_Sentence PRIMARY KEY (sentence_id)
 );
+ALTER TABLE Meaning ADD CONSTRAINT fk_Example_Sentence_vs_Word_En FOREIGN KEY (word_id) REFERENCES Word_En(word_id);
 
-/*17. Bang loai bai kiem tra*/
+/*16. Bang loai bai kiem tra*/
 CREATE TABLE Examination_Category(
-	examinaiton_category_id tinyint,
+	examination_category_id tinyint AUTO_INCREMENT,
     examination_category_name varchar(100),
-    description varchar(255)
+    description varchar(255),
+    CONSTRAINT pk_Examination_Category PRIMARY KEY (examination_category_id)
 );
 
-/*18. Bang bai kiem tra*/
+/*17. Bang bai kiem tra*/
 CREATE TABLE Examination(
-	examination_id int,
+	examination_id int AUTO_INCREMENT,
     user_id mediumint,
     level smallint,    
     begin_at datetime,
     finish_at datetime,
     pass boolean,
-    note varchar(50)
+    note varchar(50),
+    CONSTRAINT pk_Examiantion PRIMARY KEY (examination_id)
 );
+ALTER TABLE Examination ADD CONSTRAINT fk_Examination_vs_Users FOREIGN KEY (user_id) REFERENCES Users(user_id);
+ALTER TABLE Examination ADD CONSTRAINT fk_Examination_vs_Level_List FOREIGN KEY (level) REFERENCES Level_List(level);
 
-/*19. Bang phan cua bai kiem tra*/
+/*18. Bang phan cua bai kiem tra*/
 CREATE TABLE Examination_Part(
-	part_id int,
-    exmination_id int,
+	part_id int AUTO_INCREMENT,
+    examination_id int,
     examination_category_id tinyint,
     point tinyint,
     created_at datetime,
-    updated_at datetime
+    updated_at datetime,
+    CONSTRAINT pk_Examination_Part PRIMARY KEY (part_id)
 );
+ALTER TABLE Examination_Part ADD CONSTRAINT fk_Examination_Part_vs_Examination FOREIGN KEY (examination_id) REFERENCES Examination(examination_id);
+ALTER TABLE Examination_Part ADD CONSTRAINT fk_Examination_Part_vs_Examination_Category FOREIGN KEY (examination_category_id) REFERENCES Examination_Category(examination_category_id);
 
-/*20. Bang cau hoi cua bai kiem tra*/
+/*19. Bang cau hoi cua bai kiem tra*/
 CREATE TABLE Examination_Question(
-    question_id bigint,
+    question_id bigint AUTO_INCREMENT,
 	part_id int,
     question_number tinyint,
     word_id smallint,
     result boolean,
     created_at datetime,
-    updated_at datetime
+    updated_at datetime,
+    CONSTRAINT pk_Examination_Question PRIMARY KEY (question_id)
 );
+ALTER TABLE Examination_Question ADD CONSTRAINT fk_Examination_Question_vs_Examination_Part FOREIGN KEY (part_id) REFERENCES Examination_Part(part_id);
+ALTER TABLE Examination_Question ADD CONSTRAINT fk_Examination_Question_vs_Word_En FOREIGN KEY (word_id) REFERENCES Word_En(word_id);

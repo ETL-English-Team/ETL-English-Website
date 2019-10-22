@@ -28,3 +28,10 @@ Noi dung da thuc hien:
 		------Tao thu muc tu-vung trong document-files
 		------Them 4 file pdf trong thu muc tu vung
 _________________________________________________________________________________
+Ten commit: Backup lan 5
+Nguoi thuc hien: Nguyen Hoang Phuc
+Thoi gian thuc hien: 23:30 22/10/2019
+Noi dung da thuc hien:
+		------Update file csdl.txt (Xóa bảng Word_Type)
+		------Tạo file vocabulary.blade.php, vocabulary.css
+_________________________________________________________________________________

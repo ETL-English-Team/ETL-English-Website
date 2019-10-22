@@ -1,0 +1,52 @@
+.content .container{
+    background-color: #DDDDDD;
+}
+
+.panel .panel-body{
+    padding:10px;
+}
+
+.vocabulary-box{
+    cursor: pointer;
+}
+
+.panel-vocabulary-img{
+    float: left;
+    height: 120px;
+    width: 100%;
+}
+
+.panel-vocabulary-img-backview{
+    float: left;
+    height: 70px;
+    width: 100%;
+}
+
+.vocabulary-img {
+    width: 110px;
+    height: 110px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+}
+
+.vocabulary-img-backview {
+    width: 70px;
+    height: 70px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+}
+
+.panel-vocabulary-detail{
+    float: left;
+    height: 100px;
+    width: 100%;
+}
+
+.panel-vocabulary-detail-backview{
+    float: left;
+    height: 150px;
+    width: 100%;
+    font-size: 12px;
+}

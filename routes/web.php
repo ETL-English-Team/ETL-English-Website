@@ -43,3 +43,7 @@ Route::get('home',function(){
 Route::get('level-list',function(){
     return view('level-list');
 });
+
+Route::get('vocabulary',function(){
+    return view('vocabulary');
+});
