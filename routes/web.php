@@ -47,3 +47,7 @@ Route::get('level-list',function(){
 Route::get('vocabulary',function(){
     return view('vocabulary');
 });
+
+Route::get('test',function(){
+    return view('test');
+});

@@ -42,4 +42,10 @@ Noi dung da thuc hien:
 		------Tao file play-audio.js
 		------Update file vocabulary.blade.php (code chuc nang click item --> xoay + phat am thanh)
 _________________________________________________________________________________
+Ten commit: Backup lan 7
+Nguoi thuc hien: Nguyen Hoang Phuc
+Thoi gian thuc hien: 12:10 30/10/2019
+Noi dung da thuc hien:
+		------Fix vocabulary.blade.php (Sửa lỗi hiển thị ô từ vựng vocabulary)
+_________________________________________________________________________________
 
