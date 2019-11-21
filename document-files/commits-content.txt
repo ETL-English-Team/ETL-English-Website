@@ -54,3 +54,10 @@ Thoi gian thuc hien: 09:35 03/11/2019
 Noi dung da thuc hien:
 		------Them noi dung file HocLaravel.docx
 _________________________________________________________________________________
+Ten commit: Backup lan 9
+Nguoi thuc hien: Nguyen Hoang Phuc
+Thoi gian thuc hien: 12:56 21/11/2019
+Noi dung da thuc hien:
+		------Them mot so file giao dien
+_________________________________________________________________________________
+

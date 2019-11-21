@@ -3410,9 +3410,9 @@ body.fixed-left .side-menu.left {
 .page-header-title .page-title {
   margin-bottom: 12px;
 }
-body.fixed-left-void {
+/* body.fixed-left-void {
   min-height: 1024px;
-}
+} */
 /*
 File: Responsive
 */
@@ -3488,4 +3488,9 @@ File: Responsive
   .hide-phone {
     display: none !important;
   }
+}
+
+.btn-begin-test{
+  margin-bottom: 10px;
+  cursor: pointer;
 }

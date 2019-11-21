@@ -37,17 +37,29 @@ Route::group(["prefix"=>"MyUser"],function(){
 });
 
 Route::get('home',function(){
-    return view('home');
+    return view('user.home');
 });
 
 Route::get('level-list',function(){
-    return view('level-list');
+    return view('user.level-list');
 });
 
 Route::get('vocabulary',function(){
-    return view('vocabulary');
+    return view('user.vocabulary');
 });
 
 Route::get('test',function(){
-    return view('test');
+    return view('user.test');
+});
+
+Route::get('first-examination', function(){
+    return view('user.first-examination');
+});
+
+Route::get('second-examination', function(){
+    return view('user.second-examination');
+});
+
+Route::get('magic-sound-box', function(){
+    return view('user.magic-sound-box');
 });
