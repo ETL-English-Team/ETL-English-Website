@@ -3,7 +3,7 @@ Template Name: Xadmino
 File: Main Css File
 */
 /*  Google Fonts */
-@import url('https://fonts.googleapis.com/css?family=Prompt:400,500,600,700|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Tahoma:400,500,600,700|Roboto');
 /*
  - Buttons
   - Panels
@@ -47,7 +47,7 @@ h4,
 h5,
 h6 {
   color: #2a323c;
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Tahoma', sans-serif;
   margin: 10px 0;
 }
 h1 {
@@ -449,7 +449,7 @@ a:focus {
   font-weight: 500;
   padding-left: 20px;
   padding-right: 20px;
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Tahoma', sans-serif;
 }
 .nav.nav-tabs > li > a:hover,
 .nav.tabs-vertical > li > a:hover {
@@ -536,7 +536,7 @@ a:focus {
 }
 .alert .alert-link {
   font-weight: 600;
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Tahoma', sans-serif;
 }
 .alert-success {
   color: #01ba9a;
@@ -1481,7 +1481,7 @@ File: Components
 .panel-title {
   margin-bottom: 0;
   margin-top: 0;
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Tahoma', sans-serif;
 }
 .panel-footer {
   background: #fafafa;

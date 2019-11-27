@@ -52,8 +52,8 @@
                             <div class="question-content">
                                 <b>Nghĩa của từ</b>: (n) gia đình <br><br>
                                 <div class="row">
-                                    <input type="text" class="form-control" required placeholder="Đáp án">
-                                    <button type="submit" class="btn-success btn-send-answer">Gửi đáp án</button>
+                                    <input type="text" class="form-control" required placeholder="Câu trả lời">
+                                    <button type="submit" class="btn-success btn-send-answer">Gửi câu trả lời</button>
                                 </div>
                             </div>
                         </div>

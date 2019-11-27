@@ -63,3 +63,35 @@ Route::get('second-examination', function(){
 Route::get('magic-sound-box', function(){
     return view('user.magic-sound-box');
 });
+
+Route::get('profile', function(){
+    return view('user.profile');
+});
+
+
+//Admin
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('home', function(){
+        return view('admin.home');
+    });
+
+    Route::get('topic-list', function(){
+        return view('admin.topic-list');
+    });
+
+    Route::get('import-topic-by-excel-file', function(){
+        return view('admin.import-topic-by-excel-file');
+    });
+
+    Route::get('import-vocabulary-by-excel-file', function(){
+        return view('admin.import-vocabulary-by-excel-file');
+    });
+
+    Route::get('insert-topic', function(){
+        return view('admin.insert-topic');
+    });
+
+    Route::get('insert-vocabulary', function(){
+        return view('admin.insert-vocabulary');
+    });
+});

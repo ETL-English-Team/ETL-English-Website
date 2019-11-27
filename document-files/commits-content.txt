@@ -60,4 +60,10 @@ Thoi gian thuc hien: 12:56 21/11/2019
 Noi dung da thuc hien:
 		------Them mot so file giao dien
 _________________________________________________________________________________
-
+Ten commit: Backup lan 10
+Nguoi thuc hien: Nguyen Hoang Phuc
+Thoi gian thuc hien: 21:35 27/11/2019
+Noi dung da thuc hien:
+		------Them mot so file giao dien
+		------Tao cac file model, controller
+_________________________________________________________________________________

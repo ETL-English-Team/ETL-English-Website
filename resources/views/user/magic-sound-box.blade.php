@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Phần 1 - Điền từ theo nghĩa</h4>
+                        <h4 class="pull-left page-title">Trò chơi "Chiếc hộp âm thanh"</h4>
                         <ol class="hidden-xs breadcrumb pull-right">
                             <button type="submit" class="btn-link">Hủy bài kiểm tra</button>
                         </ol>
@@ -131,8 +131,8 @@
                                 <b>Ấn vào chiếc hộp</b> để nghe từ khóa ẩn chứa bên trong nào.<br>
                                 Hãy cho chúng tôi biết bạn nghe thấy gì bằng cách <b>điền từ đó</b> vào ô bên dưới nhé<br><br>
                                 <div class="row">
-                                    <input type="text" class="form-control" required placeholder="Đáp án">
-                                    <button type="submit" class="btn-success btn-send-answer">Gửi đáp án</button>
+                                    <input type="text" class="form-control" required placeholder="Câu trả lời">
+                                    <button type="submit" class="btn-success btn-send-answer">Gửi câu trả lời</button>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
                 <div class="hidden-xs col-sm-6 col-md-3 col-lg-3 result-frame">
                     <div class="panel panel-primary text-center panel-total-question">
                         <div class="panel-heading">
-                            <h4 class="panel-title">Điểm số hiên tại của bạn</h4>
+                            <h4 class="panel-title">Điểm số hiện tại của bạn</h4>
                         </div>
                         <div class="panel-body">
                             <h3 class=""><b>10</b></h3>
