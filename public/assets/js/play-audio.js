@@ -1,4 +1,4 @@
-function playAudio(){
-    var audio = new Audio('assets/sound/vocabulary/dictionary.mp3');
+function playAudio($path){
+    var audio = new Audio($path);
     audio.play();
 }

@@ -52,7 +52,7 @@
                             <div class="question-content">
                                 <b>Nghĩa của từ</b>: (n) gia đình <br><br>
                                 <div class="row">
-                                    <input type="text" class="form-control" required placeholder="Câu trả lời">
+                                    <input type="text" class="form-control" required placeholder="Câu trả lời" value="{{$exam_id_inserted}}">
                                     <button type="submit" class="btn-success btn-send-answer">Gửi câu trả lời</button>
                                 </div>
                             </div>

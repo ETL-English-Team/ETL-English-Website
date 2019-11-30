@@ -11,136 +11,60 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Trang chủ</h4>
+                        <h4 class="pull-left page-title">Danh sách chủ đề đã mở khóa</h4>
                         <ol class="breadcrumb pull-right">
-                            <li><a href="#">ETL English</a></li>
-                            <li class="active">Trang chủ</li>
+                            <li><a href="vocabulary/{{$currently_topic->topic_id}}">Ấn để học ngay LV{{$currently_topic->level}} ({{$currently_topic->topic_name_vi}})</a></li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
 
+            {{-- begin of unlocked topic list --}}
             <div class="row">
-                <div class="col-sm-6 col-lg-3">
-                    <div class="panel panel-primary text-center">
+            @foreach ($unlocked_topic_list as $unlocked_topic)
+                {{-- begin of topic panel --}}
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                    <div class="panel panel-primary text-center topic-panel" onclick="Redirect({{$unlocked_topic->topic_id}})">
                         <div class="panel-heading">
-                            <h4 class="panel-title">LV 1 - "Gia đình"</h4>
+                            <h5 class="panel-title">LV{{$unlocked_topic->level}}. {{$unlocked_topic->topic_name_vi}}</h5>
                         </div>
-                        <div class="panel-body" style="padding: 0px;">
-                                <figure class="snip1104 blue">
-                                    <img src="assets/images/MagicSoundBox.jpg" style="width:100%; height:200px;">
-                                    <figcaption>
-                                        <h2><img src="assets/images/danh-gia/1-sao-danh-gia.png" style="opacity:1"></h2>
-                                    </figcaption>
-                                    <a href="#"></a>
-                                </figure>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-3">
-                        <div class="panel panel-primary text-center">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">LV 1 - "Gia đình"</h4>
+                        <div class="panel-body">
+                            <div class="row">
+                                <img src="{{$unlocked_topic->image}}" class="topic-img" alt="">
                             </div>
-                            <div class="panel-body" style="padding: 0px;">
-                                    <figure class="snip1104 blue">
-                                        <img src="assets/images/MagicSoundBox.jpg" style="width:100%; height:200px;">
-                                        <figcaption>
-                                            <h2><img src="assets/images/danh-gia/2-sao-danh-gia.png" style="opacity:1"></h2>
-                                        </figcaption>
-                                        <a href="#"></a>
-                                    </figure>
+                            <div class="row">
+                                Số từ: 10 từ <br>
+                                Số điểm: 9/10 <br>
+                                Đánh giá level: <br>
+                                <img src="assets/images/star-vote.png" class="star-vote" alt="">
+                                <img src="assets/images/star-vote.png" class="star-vote" alt="">
+                                <img src="assets/images/star-vote.png" class="star-vote" alt="">
+                                <div class="note-voca"><i>Ấn để học ngay</i></div>
                             </div>
                         </div>
                     </div>
-
-                <div class="col-sm-6 col-lg-3">
-                        <div class="panel panel-primary text-center">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">LV 1 - "Gia đình"</h4>
-                            </div>
-                            <div class="panel-body" style="padding: 0px;">
-                                    <figure class="snip1104 blue">
-                                        <img src="assets/images/MagicSoundBox.jpg" style="width:100%; height:200px;">
-                                        <figcaption>
-                                            <h2><img src="assets/images/danh-gia/3-sao-danh-gia.png" style="opacity:1"></h2>
-                                        </figcaption>
-                                        <a href="#"></a>
-                                    </figure>
-                            </div>
-                        </div>
                 </div>
-
-                <div class="col-sm-6 col-lg-3">
-                        <div class="panel panel-primary text-center">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">LV 1 - "Gia đình"</h4>
-                            </div>
-                            <div class="panel-body" style="padding: 0px;">
-                                    <figure class="snip1104 blue">
-                                        <img src="assets/images/MagicSoundBox.jpg" style="width:100%; height:200px;">
-                                        <figcaption>
-                                            <h2><img src="assets/images/Logo/logo-ETL-word-2.jpg" style="opacity:1"></h2>
-                                        </figcaption>
-                                        <a href="#"></a>
-                                    </figure>
-                            </div>
-                        </div>
-                </div>
+                {{-- end of topic panel --}}
+            @endforeach
             </div>
+            {{-- end of unlocked topic list --}}
+
 
             <div class="row">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="panel panel-primary text-center">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">LV 1 - "Gia đình"</h4>
-                            </div>
-                            <div class="panel-body" style="padding: 0px;">
-                                    <figure class="snip1104 blue">
-                                        <img src="assets/images/MagicSoundBox.jpg" style="width:100%; height:200px;">
-                                        <figcaption>
-                                            <h2><img src="assets/images/Logo/logo-ETL-word-2.jpg" style="opacity:1"></h2>
-                                        </figcaption>
-                                        <a href="#"></a>
-                                    </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="panel panel-primary text-center">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">LV 2 - "Dụng cụ học tập"</h4>
-                            </div>
-                            <div class="panel-body">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="panel panel-primary text-center">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">LV 3 - "Cảm xúc"</h4>
-                            </div>
-                            <div class="panel-body">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="panel panel-primary text-center">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">LV 4 - "Thể thao"</h4>
-                            </div>
-                            <div class="panel-body">
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-xs-2 col-sm-3 col-md-4 col-lg-4"></div>
+                <div class="col-xs-8 col-sm-6 col-md-4 col-lg-4">
+                    <button type="submit" class="btn-info btn-readmore-topic">Xem thêm</button>
+                </div>
+                <div class="col-xs-2 col-sm-3 col-md-4 col-lg-4"></div>
             </div>
 
         </div> <!-- container -->
         
     </div> <!-- content -->
+    <script>
+        function Redirect(id) {
+            window.location='vocabulary/'+id;
+        }
+    </script>
 @endsection

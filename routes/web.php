@@ -40,25 +40,15 @@ Route::get('home',function(){
     return view('user.home');
 });
 
-Route::get('level-list',function(){
-    return view('user.level-list');
-});
+//Level list routes
+Route::get('level-list', 'TopicController@showView');
 
-Route::get('vocabulary',function(){
-    return view('user.vocabulary');
-});
+//vocabulary routes
+Route::get('vocabulary/{id}', 'WordEnController@showView');
 
-Route::get('test',function(){
-    return view('user.test');
-});
-
-Route::get('first-examination', function(){
-    return view('user.first-examination');
-});
-
-Route::get('second-examination', function(){
-    return view('user.second-examination');
-});
+//examination routes
+Route::get('first-examination/{level}', 'ExaminationController@showFirstExamView');
+Route::get('second-examination/{level}', 'ExaminationController@showSecondExamView');
 
 Route::get('magic-sound-box', function(){
     return view('user.magic-sound-box');
