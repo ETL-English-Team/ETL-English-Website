@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class ExaminationCategory extends Model
 {
@@ -13,6 +14,14 @@ class ExaminationCategory extends Model
     public static function getAllExamCategory(){
         $data = DB::table('examination_category')
                 ->get();
+
+        return $data;
+    }
+
+    public static function getExamCategoryById($examination_category_id){
+        $data = DB::table('examination_category')
+                ->where('examination_category_id','=',$examination_category_id)
+                ->first();
 
         return $data;
     }

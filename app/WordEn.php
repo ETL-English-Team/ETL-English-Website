@@ -29,4 +29,15 @@ class WordEn extends Model
 
         return $data;
     }
+
+    public static function getAllVocaRandomByLevel($level){
+        $data = DB::table('word_en')
+                ->join('topic','topic.topic_id','=','word_en.topic_id')
+                ->where('topic.level','=',$level)
+                ->select('word_en.word_id')
+                ->inRandomOrder()
+                ->get();
+
+        return $data;
+    }
 }

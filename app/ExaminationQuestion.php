@@ -18,4 +18,32 @@ class ExaminationQuestion extends Model
 
         return $data;
     }
+
+    public static function getQuestionForFirstExam($examination_part_id, $question_number){
+        $data = DB::table('examination_question')
+                ->join('examination_part','examination_part.examination_part_id','=','examination_question.examination_part_id')
+                ->join('word_en','word_en.word_id','=','examination_question.word_id')
+                ->where('examination_question.examination_part_id','=',$examination_part_id)
+                ->where('examination_question.question_number','=',$question_number)
+                ->select('examination_question.word_id',
+                        'examination_question.question_number',
+                        'word',
+                        'spelling',
+                        'voice',
+                        'image',
+                        'meaning_1')
+                ->first();
+
+        return $data;
+    }
+
+    public static function getNumOfQuestionForFirstExam($examination_part_id){
+        $data = DB::table('examination_question')
+                ->join('examination_part','examination_part.examination_part_id','=','examination_question.examination_part_id')
+                ->join('word_en','word_en.word_id','=','examination_question.word_id')
+                ->where('examination_question.examination_part_id','=',$examination_part_id)
+                ->count();
+
+        return $data;
+    }
 }
