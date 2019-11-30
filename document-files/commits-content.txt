@@ -67,3 +67,15 @@ Noi dung da thuc hien:
 		------Them mot so file giao dien
 		------Tao cac file model, controller
 _________________________________________________________________________________
+Ten commit: Backup lan 11
+Nguoi thuc hien: Nguyen Hoang Phuc
+Thoi gian thuc hien: 21:35 27/11/2019
+Noi dung da thuc hien:
+		------Code mot so chuc nag
+_________________________________________________________________________________
+Ten commit: Backup lan 11
+Nguoi thuc hien: Nguyen Hoang Phuc
+Thoi gian thuc hien: 21:35 30/11/2019
+Noi dung da thuc hien:
+		------Doi CSDL
+_________________________________________________________________________________
