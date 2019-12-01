@@ -85,3 +85,10 @@ Route::group(['prefix'=>'admin'],function(){
         return view('admin.insert-vocabulary');
     });
 });
+
+
+
+//Ajax routes
+Route::group(['prefix'=>'ajax'],function(){
+    Route::get('check-answer/{answer}', 'ExaminationController@checkAnswer');
+});

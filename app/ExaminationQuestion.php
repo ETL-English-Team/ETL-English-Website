@@ -19,7 +19,8 @@ class ExaminationQuestion extends Model
         return $data;
     }
 
-    public static function getQuestionForFirstExam($examination_part_id, $question_number){
+    //Lấy câu hỏi theo mã phần thi và số thứ tự câu hỏi
+    public static function getQuestByPartIdAndQuestNum($examination_part_id, $question_number){
         $data = DB::table('examination_question')
                 ->join('examination_part','examination_part.examination_part_id','=','examination_question.examination_part_id')
                 ->join('word_en','word_en.word_id','=','examination_question.word_id')
@@ -37,6 +38,7 @@ class ExaminationQuestion extends Model
         return $data;
     }
 
+    //Lấy số câu hỏi theo mã phần thi
     public static function getNumOfQuestionForFirstExam($examination_part_id){
         $data = DB::table('examination_question')
                 ->join('examination_part','examination_part.examination_part_id','=','examination_question.examination_part_id')

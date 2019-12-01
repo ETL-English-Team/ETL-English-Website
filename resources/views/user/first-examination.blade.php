@@ -25,18 +25,20 @@
                 </div>
             </div>
 
-            <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
-                <div class="modal fade" id="modal-result" data-backdrop="static" data-keyboard="false">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                ETL English thông báo kết quả
-                            </div>
-                            <div class="modal-body">
-                                Chúc mừng bạn! Bạn đã trả lời đúng. Đáp án câu 1 là <b>determine</b>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn-success btn-next-question">Sang câu tiếp theo</button>
+            <div class="row">
+                <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
+                    <div class="modal fade" id="modal-result" data-backdrop="static" data-keyboard="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    ETL English thông báo kết quả
+                                </div>
+                                <div class="modal-body">
+                                    Chúc mừng bạn! Bạn đã trả lời đúng. Đáp án câu 1 là <b>determine</b>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn-success btn-next-question">Sang câu tiếp theo</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -55,10 +57,10 @@
                             <img src="{{$first_question->image}}" class="question-img" alt="">
                             <div class="question-content">
                                 <b>Nghĩa của từ</b>: {{$first_question->meaning_1}} <br>
-                                Hãy điền từ có nghĩa như trên vào ô trả lời bên dưới và ấn vào nút gửi câu hỏi<br><br>
+                                <i>Hãy điền từ có nghĩa như trên vào ô trả lời bên dưới và ấn vào nút gửi câu hỏi</i><br><br>
                                 <div class="row">
-                                    <input type="text" class="form-control" required placeholder="Câu trả lời">
-                                    <button class="btn-success btn-send-answer" data-toggle="modal" data-target="#modal-result">Gửi câu trả lời</button>
+                                    <input id="answer" type="text" class="form-control" required placeholder="Câu trả lời">
+                                    <button onclick="sendAnswer()" class="btn-success btn-send-answer" data-toggle="modal" data-target="#modal-result">Gửi câu trả lời</button>
                                 </div>
                             </div>
                         </div>
@@ -111,4 +113,6 @@
         </div></div> <!-- container -->
 
     </div> <!-- content -->
+
+    <script src="assets/js/examination.js"></script>
 @endsection

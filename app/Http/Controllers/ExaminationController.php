@@ -12,6 +12,13 @@ use Session;
 
 class ExaminationController extends Controller
 {
+    // Các session được lưu khi làm bài kiểm tra:
+    //     1. exam_id
+    //     2. exam_part1_id
+    //     3. exam_question_number
+
+
+
     //Hàm chạy khi truy cập route first-examination
     protected function showFirstExamView($level){
         $user_id = 1;
@@ -24,19 +31,20 @@ class ExaminationController extends Controller
         $exam_id_inserted = $exam->examination_id;
         Session::put('exam_id',$exam_id_inserted);
 
-        $this->insertExaminationPart('exam_id',1,'exam_part_id_1');
+        $this->insertExaminationPart('exam_id',1,'exam_part1_id');
         $voca_random_list = WordEn::getAllVocaRandomByLevel($level);
 
         $question_number = 1;
         foreach($voca_random_list as $voca){
             $word_id = $voca->word_id;
-            $this->insertExaminationQuestion('exam_part_id_1', $question_number, $word_id);
+            $this->insertExaminationQuestion('exam_part1_id', $question_number, $word_id);
             $question_number++;
         }
 
-        $exam_part1_id = session()->get('exam_part_id_1');
-        $first_question = ExaminationQuestion::getQuestionForFirstExam($exam_part1_id,1);
+        $exam_part1_id = session()->get('exam_part1_id');
+        $first_question = ExaminationQuestion::getQuestByPartIdAndQuestNum($exam_part1_id,1);
         $num_of_question = ExaminationQuestion::getNumOfQuestionForFirstExam($exam_part1_id);
+        Session::put('exam_question_number',1);
 
         return view('user.first-examination',['first_exam'=>$first_exam,
                                             'first_question'=>$first_question,
@@ -51,7 +59,7 @@ class ExaminationController extends Controller
         return view('user.second-examination',['second_exam'=>$second_exam]);
     }
 
-    //Hàm insert vào examination part
+    //Hàm insert vào examination part và lưu examination_part_id vừa insert vào session
     protected function insertExaminationPart($exam_id ,$examination_category_id, $exam_part_id_session){
         $examination_id = session()->get($exam_id);
         $exam_part = new ExaminationPart;
@@ -72,5 +80,18 @@ class ExaminationController extends Controller
         $exam_question->question_number = $question_number;
         $exam_question->word_id = $word_id;
         $exam_question->save();
+    }
+
+    //Hàm kiểm tra câu trả lời
+    protected function checkAnswer($answer){
+        $question_number = session()->get('exam_question_number');
+        $exam_part_id = session()->get('exam_part1_id');
+        $exam_question = ExaminationQuestion::getQuestByPartIdAndQuestNum($exam_part_id, $question_number);
+        if (strtolower($answer)==$exam_question->word){
+            echo 'Chúc mừng bạn! Bạn đã trả lời đúng. Đáp án câu '.$question_number.' là <b>'.$exam_question->word.'</b>';
+        }
+        else{
+            echo 'Rất tiếc! Bạn đã sai mất rồi. Đáp án của câu '.$question_number.' là <b>'.$exam_question->word.'</b>. (Câu trả lời của bạn: '.$answer.')';
+        }
     }
 }
