@@ -74,4 +74,12 @@
         </div></div> <!-- container -->
 
     </div> <!-- content -->
+
+    <script>
+        function playAudio($path){
+            var audio = new Audio($path);
+            audio.play();
+        }
+    </script>
+
 @endsection

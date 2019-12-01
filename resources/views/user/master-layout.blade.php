@@ -302,8 +302,5 @@
         {{-- Image Style --}}
         <script src="assets/js/image_style.js"></script>
 
-        {{-- play audio --}}
-        <script src="assets/js/play-audio.js"></script>
-
     </body>
 </html>
