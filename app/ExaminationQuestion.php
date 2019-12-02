@@ -48,4 +48,21 @@ class ExaminationQuestion extends Model
 
         return $data;
     }
+
+    public static function updateResultQuestion($examination_part_id ,$question_number, $result){
+        $examination_question = DB::table('examination_question')
+                                ->where('examination_part_id','=',$examination_part_id)
+                                ->where('question_number','=',$question_number)
+                                ->update(['result'=>$result]);
+    }
+
+    public static function getNumOfTrueOrFalseQuestion($examination_part_id ,$question_number, $result){
+        $data = DB::table('examination_question')
+                                ->where('examination_part_id','=',$examination_part_id)
+                                ->where('question_number','=',$question_number)
+                                ->where('result','=',$result)
+                                ->count();
+
+        return $data;
+    }
 }

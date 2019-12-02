@@ -37,7 +37,7 @@
                                     Chúc mừng bạn! Bạn đã trả lời đúng. Đáp án câu 1 là <b>determine</b>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn-success btn-next-question">Sang câu tiếp theo</button>
+                                    <button type="button" class="btn-success btn-next-question" onclick="nextQuestion()">Sang câu tiếp theo</button>
                                 </div>
                             </div>
                         </div>

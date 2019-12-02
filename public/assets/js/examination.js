@@ -10,3 +10,11 @@ function reloadData(html_post, html_get, path){
 function sendAnswer(){
     reloadData( $('#answer') , $('.modal-body') , 'ajax/check-answer/' );
 }
+
+function nextQuestion(){
+    reloadData( $('#answer') , $('.modal-body') , 'ajax/check-answer/' );
+    reloadData( $('#answer') , $('.modal-body') , 'ajax/check-answer/' );
+    reloadData( $('#answer') , $('.modal-body') , 'ajax/check-answer/' );
+    reloadData( $('#answer') , $('.modal-body') , 'ajax/check-answer/' );
+    reloadData( $('#answer') , $('.modal-body') , 'ajax/check-answer/' );
+}

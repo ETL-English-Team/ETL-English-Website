@@ -16,6 +16,7 @@ class ExaminationController extends Controller
     //     1. exam_id
     //     2. exam_part1_id
     //     3. exam_question_number
+    //     4. num_of_question
 
 
 
@@ -44,6 +45,9 @@ class ExaminationController extends Controller
         $exam_part1_id = session()->get('exam_part1_id');
         $first_question = ExaminationQuestion::getQuestByPartIdAndQuestNum($exam_part1_id,1);
         $num_of_question = ExaminationQuestion::getNumOfQuestionForFirstExam($exam_part1_id);
+        Session::put('num_of_question', $num_of_question);
+        Session::put('num_of_true_question', 0);
+        Session::put('num_of_false_question', 0);
         Session::put('exam_question_number',1);
 
         return view('user.first-examination',['first_exam'=>$first_exam,
@@ -87,11 +91,50 @@ class ExaminationController extends Controller
         $question_number = session()->get('exam_question_number');
         $exam_part_id = session()->get('exam_part1_id');
         $exam_question = ExaminationQuestion::getQuestByPartIdAndQuestNum($exam_part_id, $question_number);
+        $result =0;
         if (strtolower($answer)==$exam_question->word){
             echo 'Chúc mừng bạn! Bạn đã trả lời đúng. Đáp án câu '.$question_number.' là <b>'.$exam_question->word.'</b>';
+            $result = 1;
         }
         else{
             echo 'Rất tiếc! Bạn đã sai mất rồi. Đáp án của câu '.$question_number.' là <b>'.$exam_question->word.'</b>. (Câu trả lời của bạn: '.$answer.')';
         }
+        ExaminationQuestion::updateResultQuestion($exam_part_id, $question_number, $result);
+        $question_number=$question_number+1;
+        Session::put('exam_question_number' ,$question_number);
     }
+
+    //load next question functions
+    protected function loadQuestionDetail(){
+        $exam_part_id = session()->get('exam_part1_id');
+        $question_number = session()->get('exam_question_number');
+        $num_of_question = session()->get('num_of_question');
+        $question = ExaminationQuestion::getQuestByPartIdAndQuestNum($exam_part_id, $question_number);
+    }
+
+    protected function loadQuestionNumber(){
+        $question_number = session()->get('exam_question_number');
+        echo $question_number;
+    }
+
+    protected function loadNumOfQuestion(){
+        $question_number = session()->get('num_of_question');
+        echo $question_number;
+    }
+
+    protected function loadNumOfTrueQuestion(){
+        $exam_part_id = session()->get('exam_part1_id');
+        $question_number = session()->get('exam_question_number');
+        $num_of_true_question = ExaminationQuestion::getNumOfTrueOrFalseQuestion($exam_part_id, $question_number, 1);
+        echo $num_of_true_question;
+    }
+
+    protected function loadNumOfFalseQuestion(){
+        $exam_part_id = session()->get('exam_part1_id');
+        $question_number = session()->get('exam_question_number');
+        $num_of_false_question = ExaminationQuestion::getNumOfTrueOrFalseQuestion($exam_part_id, $question_number, 0);
+        echo $num_of_false_question;
+    }
+    //load next question functions
+
 }
